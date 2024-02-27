@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/SullySoft/static/css/main.bd616e83.css",
-    "main.js": "/SullySoft/static/js/main.4e0ee5b9.js",
+    "main.js": "/SullySoft/static/js/main.7932a96c.js",
     "static/js/453.cb082578.chunk.js": "/SullySoft/static/js/453.cb082578.chunk.js",
     "static/media/Coral.otf": "/SullySoft/static/media/Coral.aeabde6c4d9150cacc25.otf",
     "index.html": "/SullySoft/index.html",
     "main.bd616e83.css.map": "/SullySoft/static/css/main.bd616e83.css.map",
-    "main.4e0ee5b9.js.map": "/SullySoft/static/js/main.4e0ee5b9.js.map",
+    "main.7932a96c.js.map": "/SullySoft/static/js/main.7932a96c.js.map",
     "453.cb082578.chunk.js.map": "/SullySoft/static/js/453.cb082578.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bd616e83.css",
-    "static/js/main.4e0ee5b9.js"
+    "static/js/main.7932a96c.js"
   ]
 }
