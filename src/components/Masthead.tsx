@@ -8,28 +8,32 @@ const news = [
         key: 0,
         dept: GAMES_DEPT,
         desc: 'Scribe VR Release Q2 2024',
-        image:  "url('scribe1.png')", 
+        asset:  "url('scribe1.png')", 
+        video: true,
         call: 'View',
     },
     {
         key: 1,
         dept: GAMES_DEPT,
         desc: 'Scribe Mobile Release Q2 2024',
-        image:  "url('scribe1.png')", 
+        asset:  "url('scribe1.png')", 
+        video: false,
         call: 'View',
     },
     {
         key: 2,
         dept: WEB_DEPT,
         desc: 'Producer Hub Live',
-        image:  "url('scribe1.png')", 
+        asset:  "url('scribe1.png')", 
+        video: false,
         call: 'Check It Out',
     },
     {
         key: 3,
         dept: WEB_DEPT,
         desc: 'Remorás Consulting',
-        image:  "url('agave.avif')", 
+        asset:  "url('agave.avif')", 
+        video: false,
         call: 'Check It Out',
     }
 ]
@@ -39,13 +43,25 @@ function Masthead() {
 
     const generateDots =() => {
         return news.map((obj, i) => {
-            return <div className={css(i == item.key ? styles.active : styles.dots)} onClick={() => setItem(news[i])}></div>
+            return <div key={`dot-${i}`} className={css(i === item.key ? styles.active : styles.dots)} onClick={() => setItem(news[i])}></div>
         })
     }
     let dots = generateDots();
+    let width = window.innerWidth;
+    const mastLeftInline = item.video ? {} : { backgroundImage: item.asset } 
     return (
         <div className={css(styles.container)}> 
-            <div className={css(Object.assign({}, styles.mastleft))} style={{backgroundImage: item.image}}></div>
+            <div className={css(Object.assign({}, styles.mastleft))} style={mastLeftInline}>
+                { 
+                    item.video 
+                    ?
+                    <video style={{width: '100%', height: '100%', objectFit: 'cover'}} autoPlay muted loop>
+                        <source src="scribe-reel1.mp4" type="video/mp4" />
+                    </video>
+                    :
+                    null
+                }
+            </div>
             <div className={css(styles.mastright)}> 
                 <div className={css(styles.dept)}>{item.dept}</div>
                 <div className={css(styles.desc)}>{item.desc}</div>
@@ -59,6 +75,7 @@ function Masthead() {
     container: {
         width: '100%',
         display: 'flex',
+        overflow: 'hidden',
         '@media (max-width: 940px)': {
             flexDirection: 'column',
         }

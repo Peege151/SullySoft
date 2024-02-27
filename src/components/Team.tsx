@@ -5,12 +5,15 @@ import { StyleSheet, css } from 'aphrodite';
 const members = [
     {
         name: 'Patrick Sullivan',
+        role: 'Software Developer',
     },
     {
         name: 'Kirk Sullivan',
+        role: 'System Operations',
     },
     {
         name: 'José Emilio Figueroa',
+        role: 'Artistic Director',
     }
 ]
 
@@ -18,9 +21,10 @@ export default function Team() {
   const generateTeamTsx = () => {
     return members.map((member, i) => {
         return (
-            <div className={css(styles.memberWrap)}> 
+            <div key={`member-${i}`}className={css(styles.memberWrap)}> 
                 <div className={css(styles.photo)}>  </div>
                 <div className={css(styles.name)}> { member.name } </div>
+                <div className={css(styles.name)}> { member.role } </div>
             </div>
         )
     })
@@ -51,7 +55,6 @@ const styles = StyleSheet.create({
       margin: '0 auto',
       justifyContent: 'space-between',
       '@media (max-width: 940px)': {
-        backgroundColor: 'red',
         margin: 0,
         width: '100%',  
         flexDirection: 'column',
