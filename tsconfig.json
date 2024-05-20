@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"strict": true,
+		"esModuleInterop": true,
+		"jsx": "react",
+		"allowJs": true,
+		"baseUrl": "./src",
+		"outDir": "./dist",
+		"noEmit": true,
+		"allowImportingTsExtensions": true,
+		"paths": {
+			"*": ["*", "src/*"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": ["node_modules"]
+}
